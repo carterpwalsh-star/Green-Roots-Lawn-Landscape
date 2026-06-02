@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Green Roots Lawn & Landscape – Shawnee, KS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --forest: #1c3520;
+    --green: #2d6a3f;
+    --lime: #7ab730;
+    --cream: #f8f4ec;
+    --warm: #e8e0d0;
+    --text: #1c2418;
+    --muted: #6b7c62;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(28, 53, 32, 0.97);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6%; height: 68px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-leaf { font-size: 24px; }
+  .nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    color: white; line-height: 1;
+  }
+  .nav-name small { display: block; font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 3px; color: rgba(255,255,255,0.45); text-transform: uppercase; }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { text-decoration: none; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+  nav ul a:hover { color: var(--lime); }
+  .nav-btn { background: var(--lime); color: var(--forest) !important; padding: 9px 22px; border-radius: 50px; font-weight: 600 !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(180deg, rgba(28,53,32,0.75) 0%, rgba(28,53,32,0.4) 50%, rgba(28,53,32,0.85) 100%),
+      url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=80') center/cover;
+    display: flex; align-items: center;
+    padding: 120px 6% 80px;
+  }
+  .hero-inner { max-width: 640px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(122,183,48,0.2); border: 1px solid rgba(122,183,48,0.4);
+    border-radius: 30px; padding: 6px 16px;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    color: var(--lime); text-transform: uppercase;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s both;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(50px, 7vw, 80px);
+    font-weight: 900; line-height: 1.05;
+    color: white;
+    animation: fadeUp 0.6s 0.1s both;
+  }
+  h1 em { color: var(--lime); font-style: italic; }
+  .hero-p {
+    margin-top: 20px; font-size: 18px; font-weight: 300;
+    color: rgba(255,255,255,0.8); line-height: 1.7;
+    animation: fadeUp 0.6s 0.2s both;
+  }
+  .hero-btns {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    margin-top: 36px;
+    animation: fadeUp 0.6s 0.3s both;
+  }
+  .btn-g {
+    background: var(--lime); color: var(--forest);
+    padding: 15px 34px; border-radius: 50px;
+    font-size: 16px; font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(122,183,48,0.4);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn-g:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(122,183,48,0.5); }
+  .btn-outline {
+    background: transparent; color: white;
+    padding: 15px 34px; border-radius: 50px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    font-size: 16px; font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: white; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SERVICES */
+  .services { padding: 90px 6%; background: var(--cream); }
+  .sec-label { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--lime); margin-bottom: 10px; }
+  .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 900; color: var(--forest); margin-bottom: 50px; }
+  .sec-title em { color: var(--green); font-style: italic; }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .svc-card {
+    background: white; border-radius: 16px;
+    padding: 36px 28px;
+    border: 1px solid var(--warm);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .svc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(28,53,32,0.1); }
+  .svc-icon { font-size: 36px; margin-bottom: 16px; }
+  .svc-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--forest); margin-bottom: 10px; }
+  .svc-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .svc-price { margin-top: 16px; font-size: 18px; font-weight: 600; color: var(--green); }
+
+  /* PRICING */
+  .pricing { padding: 90px 6%; background: var(--forest); }
+  .pricing .sec-title { color: white; }
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .price-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 30px 24px;
+    transition: background 0.2s;
+  }
+  .price-card:hover { background: rgba(255,255,255,0.1); }
+  .price-card h4 { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--lime); margin-bottom: 16px; }
+  .price-list { list-style: none; }
+  .price-list li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; color: rgba(255,255,255,0.75); }
+  .price-list li:last-child { border-bottom: none; }
+  .price-list .amt { color: #a8d060; font-weight: 600; white-space: nowrap; }
+
+  /* CONTACT */
+  .contact { padding: 90px 6%; background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 16px; }
+  .contact-info { display: flex; flex-direction: column; gap: 20px; }
+  .c-card { background: white; border-radius: 12px; padding: 22px 24px; border: 1px solid var(--warm); display: flex; gap: 16px; }
+  .c-icon { font-size: 24px; flex-shrink: 0; }
+  .c-card h4 { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); margin-bottom: 4px; }
+  .c-card p { font-size: 16px; font-weight: 600; color: var(--forest); }
+  .cta-box { background: var(--green); border-radius: 16px; padding: 44px 40px; text-align: center; }
+  .cta-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: white; margin-bottom: 10px; }
+  .cta-box p { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+  .cta-phone { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--lime); display: block; text-decoration: none; margin-bottom: 20px; }
+  .cta-book { display: block; background: var(--lime); color: var(--forest); padding: 16px; border-radius: 50px; font-size: 16px; font-weight: 700; text-decoration: none; }
+
+  footer { background: var(--forest); padding: 28px 6%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.3); }
+
+  @media(max-width:768px) { nav ul { display: none; } .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="nav-leaf">🌿</span>
+    <div class="nav-name">Green Roots<small>Lawn & Landscape</small></div>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-btn">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">📍 Shawnee, KS · Johnson County</div>
+    <h1>Lawn Care<br>Done <em>Right.</em></h1>
+    <p class="hero-p">Professional mowing, landscaping, and seasonal cleanup for homeowners who want their yard to look its best — without the hassle.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-g">Get a Free Quote</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="sec-label">What We Do</div>
+  <h2 class="sec-title">Full-Service <em>Lawn Care</em></h2>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon">🌱</div>
+      <h3>Lawn Mowing</h3>
+      <p>Weekly or bi-weekly mowing, edging, and blowing for a clean, professional finish every time.</p>
+      <div class="svc-price">From $45 / visit</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🪴</div>
+      <h3>Landscaping</h3>
+      <p>Mulching, bed edging, shrub trimming, and planting to transform your outdoor space.</p>
+      <div class="svc-price">Free estimate</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🍂</div>
+      <h3>Seasonal Cleanup</h3>
+      <p>Spring and fall cleanups to remove leaves, debris, and prep your yard for the season ahead.</p>
+      <div class="svc-price">From $120</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">❄️</div>
+      <h3>Snow Removal</h3>
+      <p>Reliable snow plowing and salting so your driveway and walkways stay clear all winter.</p>
+      <div class="svc-price">From $60</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="sec-label" style="color:rgba(122,183,48,0.7)">Transparent Pricing</div>
+  <h2 class="sec-title">No Surprises,<br>Just Results</h2>
+  <div class="price-grid">
+    <div class="price-card">
+      <h4>🌿 Lawn Mowing</h4>
+      <ul class="price-list">
+        <li><span>Small yard (under 5k sqft)</span><span class="amt">$45</span></li>
+        <li><span>Medium yard (5k–10k sqft)</span><span class="amt">$65</span></li>
+        <li><span>Large yard (10k+ sqft)</span><span class="amt">$85+</span></li>
+        <li><span>Edging & blowing included</span><span class="amt">✓</span></li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h4>🪴 Landscaping</h4>
+      <ul class="price-list">
+        <li><span>Mulch installation</span><span class="amt">$80+</span></li>
+        <li><span>Bed edging</span><span class="amt">$60+</span></li>
+        <li><span>Shrub trimming</span><span class="amt">$75+</span></li>
+        <li><span>Full landscape design</span><span class="amt">Quote</span></li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h4>🍂 Cleanup & Snow</h4>
+      <ul class="price-list">
+        <li><span>Spring cleanup</span><span class="amt">$120+</span></li>
+        <li><span>Fall leaf removal</span><span class="amt">$100+</span></li>
+        <li><span>Snow plowing</span><span class="amt">$60+</span></li>
+        <li><span>Salting (add-on)</span><span class="amt">$25</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="sec-label">Get In Touch</div>
+  <h2 class="sec-title">Ready for a <em>Better Yard?</em></h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="c-card"><div class="c-icon">📞</div><div><h4>Phone</h4><p>(913) 555-0192</p></div></div>
+      <div class="c-card"><div class="c-icon">✉️</div><div><h4>Email</h4><p>info@greenrootskc.com</p></div></div>
+      <div class="c-card"><div class="c-icon">📍</div><div><h4>Service Area</h4><p>Shawnee & Johnson County, KS</p></div></div>
+    </div>
+    <div class="cta-box">
+      <h3>Get Your Free Quote</h3>
+      <p>Call or text us anytime — we respond fast and offer free estimates on all services.</p>
+      <a class="cta-phone" href="tel:9135550192">(913) 555-0192</a>
+      <a class="cta-book" href="tel:9135550192">📅 Schedule Today</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Green Roots Lawn & Landscape · Shawnee, KS</p>
+  <p>© 2025 · Built by Shawnee Digital</p>
+</footer>
+</body>
+</html>
